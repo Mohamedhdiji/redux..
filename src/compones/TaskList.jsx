@@ -1,0 +1,18 @@
+import React from 'react'
+import { useSelector } from 'react-redux/es/hooks/useSelector'
+import TaskCard from './TaskCard'
+
+ const TaskList  = () => {
+    const {tasks} = useSelector (state=> state)
+console.log(tasks)
+  return (
+    <div>
+        {
+            tasks.map(el=>
+                <TaskCard task={el}  /> 
+                )
+        }
+    </div>
+  )
+}
+export  default TaskList 
